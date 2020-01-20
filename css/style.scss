@@ -1,0 +1,409 @@
+$grey: #707070;
+$light-grey: #888888;
+$white: #fff;
+
+//Linx Colors
+$grape: #61045F;
+$light-grape: #AA076B;
+$orange: #f5af19;
+$red: #f12711;
+$green: #11998e;
+
+//Settings
+$max-mobile-screen:767px;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior:smooth;
+    -moz-scroll-behavior:smooth;
+}
+
+
+body {
+    font-size: 16px;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    color: $grey;
+    position: relative;
+}
+
+.top-link {
+    position: fixed;
+    bottom: 1.5em;
+    right: 1.5em;
+    width: 2em;
+    height: 2em;
+    padding: 2px;
+    border-radius: 20px;
+    opacity: .6;
+    transition: opacity .3s ease;
+    background: $white;
+
+    &:hover {
+        opacity: 1;
+        transition: opacity .3s ease;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.inner-section {
+    width: 1080px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width:$max-mobile-screen) {
+        width: 100%;
+    }
+}
+
+.pg-mb {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+section {
+    padding: 4em 0;
+}
+
+.btn {
+    border-radius: 4px;
+    border: 1px solid $grape;
+    color: $white;
+    display: block;
+    padding: 12px 20px;
+    text-align: center;
+    max-width: 100%;
+    text-decoration: none;
+    font-size: 14px;
+    background: $grape;
+    transition: background .3s ease, color .3s ease;
+
+    &:hover {
+        cursor: pointer;
+        background: $orange;
+        color: $grape;
+        border: 1px solid $orange;
+        transition: background .3s ease, color .3s ease;
+    }
+}
+
+.cut {
+    border-style: solid;
+    transform: scale(1.0001);
+
+    &.right {
+        border-width: 0 100vw 60px 0;
+        border-color: $white transparent $white $white;
+    }
+
+    &.left {
+        border-width: 61px 100vw 0 0;
+        border-color: $white $grape $white $white;
+
+        @media screen and (max-width:$max-mobile-screen) { 
+            border-width: 30px 100vw 0 0;
+        }
+    }
+}
+
+header, footer {
+    padding: 4em 0;
+    overflow: hidden;
+}
+
+//Header Style
+header {
+    color: $white;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0;
+    background: $grape;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, $grape, $light-grape);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, $grape, $light-grape); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    @media screen and (max-width:$max-mobile-screen) {
+        text-align: left;
+
+        .cut {
+            margin-top: -53px;
+        }
+    }
+
+    .text-header {
+        padding: 0 0 3em;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p {
+            padding: 0;
+            font-size: 23px;
+            @media screen and (max-width:$max-mobile-screen) {
+                font-size: 1em;
+            }
+
+            &:nth-child(2) {
+                font-size: 48px;
+                font-weight: bold;
+                margin-bottom: 0.5em;
+
+                @media screen and (max-width:$max-mobile-screen) {
+                    font-size: 1.7em;
+                }
+            }
+        }
+    }
+
+    .main-menu {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 10%;
+        margin-bottom: 1em;
+        display: inline-flex;
+        width: 85%;
+
+        @media screen and (max-width:$max-mobile-screen) {
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 40vw 40vw;
+            grid-row-gap: 5px;
+            padding: 0;
+            justify-items: center;
+            z-index: 999;
+            position: relative;
+        }
+
+        .menu-item {
+            background: $white;
+            color: $grape;
+            box-shadow: 0px 1px 6px #00000029;
+            width: 160px;
+
+            @media screen and (max-width:$max-mobile-screen) {
+                width: 100%;
+                padding: 12px 0px;
+            }
+            &:hover {
+                background: $orange;
+                color: $white;
+            }
+        }
+    }
+}
+
+//Form Style
+.form-section {
+    .inner-section {
+        display: flex;
+        justify-content: space-between;
+        
+        @media screen and (max-width:$max-mobile-screen) {
+            flex-direction: column;
+        }
+    }
+
+    .description {
+        width: 50%;
+        @media screen and (max-width:$max-mobile-screen) {
+            width: auto;
+        }
+        h3 {
+            font-weight: normal;
+            margin-bottom: 1em;
+        }
+        p {
+            font-size: 12px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+    }
+    .form-container {
+        width: 45%;
+        margin-left: 25px;
+        @media screen and (max-width:$max-mobile-screen) {
+            width: auto;
+            margin: 0;
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+.box-form {
+    margin-bottom: 15px;
+
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-size: .8em;
+    }
+    input{
+        padding: 10px .8em;
+        width: 95%;
+        display: block;
+        border: 1px solid $grey;
+        color: $grey;
+        border-radius: 4px;
+    }
+
+    .radio-form {
+        margin-right: 15px;
+        input {
+            width: auto;
+            display: inline-block;
+        }
+    }
+}
+
+.title-midline {
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 2em;
+    color: $grape;
+
+    &:before, &:after {
+        background: $orange;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+
+    &:before {
+        right: 1.5em;
+        margin-left: -50%;
+    }
+    &:after {
+        left: 1.5em;
+        margin-right: -50%;
+    }
+}
+
+//Product Style
+.products-section {
+
+    > .btn {
+        width: 20em;
+        margin: 0 auto;
+        @media screen and (max-width: $max-mobile-screen) { 
+            width: 70%;
+        }
+    }
+    .product-list {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+
+        @media screen and (max-width: $max-mobile-screen) {
+            grid-template-columns: auto;
+        }
+
+        .product-item {
+            padding: 0 15px;
+            margin-bottom: 3em;
+            @media screen and (max-width: $max-mobile-screen) {
+                display: flex;
+                justify-content: space-around;
+                
+                .product-description {
+                    padding-left: 15px;
+                    min-width: 50vw;
+
+                    h4 {
+                        padding: 0;
+                    }
+                    > p {
+                        display: none;
+                    }
+                }
+            }
+
+            img {
+                max-width: 100%;
+                @media screen and (max-width: $max-mobile-screen) { 
+                    width: 40vw;
+                    height: 40vw;
+                }
+            }
+
+            h4 {
+                padding: 1em 0;
+                font-weight: normal;
+            }
+            p {
+                font-size: 12px;
+            }
+            .price-container {
+                margin: 15px 0;
+                .price {
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+            }
+
+            .btn {
+                background: $green;
+                border-color: $green;
+
+                &:hover {
+                    background: $orange;
+                    border-color: $orange;
+                }
+            }
+        }
+    }
+}
+
+//Share Section
+.share-section {
+    text-align: center;
+
+    .form-share {
+        form {
+            width: 70%;
+            margin: 2em auto;
+            @media screen and (max-width: $max-mobile-screen) { 
+                width: 90%;
+            }
+            .box-form {
+                width: 48%;
+                float: left;
+                margin-right: 1%;
+                text-align:left;
+
+                @media screen and (max-width: $max-mobile-screen) { 
+                    width: auto;
+                    float: inherit;
+                }
+            }
+            .btn {
+                margin: 1em auto 0;
+                width: 20em;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+//Footer Style
+footer {
+    background: $grape;
+    color: $white;
+    text-align: center;
+    font-size: 0.8em;
+    padding-top: 0;
+
+    .inner-section {
+        padding-top: 4em;
+    }
+}
