@@ -6,7 +6,6 @@ $white: #fff;
 $grape: #61045F;
 $light-grape: #AA076B;
 $orange: #f5af19;
-$red: #f12711;
 $green: #11998e;
 
 //Settings
@@ -311,6 +310,8 @@ header {
         .product-item {
             padding: 0 15px;
             margin-bottom: 3em;
+            position: relative;
+
             @media screen and (max-width: $max-mobile-screen) {
                 display: flex;
                 justify-content: space-around;
@@ -327,7 +328,21 @@ header {
                     }
                 }
             }
-
+            .brand {
+                font-size: .7em;
+                margin: 0;
+            }
+            .tag {
+                position: absolute;
+                top: 10px;
+                left: 24px;
+                border: 1px solid $grey;
+                color: $grey;
+                background-color: $white;
+                border-radius: 10px;
+                font-size: .7em;
+                padding: 3px 8px;
+            }
             img {
                 max-width: 100%;
                 @media screen and (max-width: $max-mobile-screen) { 
@@ -337,7 +352,7 @@ header {
             }
 
             h4 {
-                padding: 1em 0;
+                padding: 0 0 1em;
                 font-weight: normal;
             }
             p {
